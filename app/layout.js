@@ -21,18 +21,22 @@ const menus = [
   {
     label: "Home",
     route: "/",
+    button:false
   },
   {
     label: "Login",
     route: "/login",
-  },
-  {
-    label: "Registration",
-    route: "/sign-up",
+    button:false
   },
   {
     label: "Contact",
     route: "/contact-us",
+    button:false
+  },
+  {
+    label: "Registration",
+    route: "/sign-up",
+    button:true
   },
 ];
 
@@ -42,12 +46,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="bg-white sticky shadow-lg left-0 top-0 w-full py-6 flex justify-between items-center">
-          <h1>The Site Logo</h1>
-          <div className="flex">
+        <nav className="bg-white sticky shadow-lg left-0 top-0 w-full py-6 flex justify-between items-center px-[10%]">
+          <Link href="/" className="text-2xl font-bold">The Site Logo</Link>
+          <div className="flex gap-10 items-center">
             {menus.map((item, index) => (
               <Link
-                className="hover:bg-amber-400 p-3"
+                className={item.button ? "rounded p-5 bg-amber-800 hover:bg-blue-950 hover:text-shadow-amber-50":""}
                 href={item.route}
                 key={index}
               >
@@ -56,8 +60,8 @@ export default function RootLayout({ children }) {
             ))}
           </div>
         </nav>
-        {children}
-        <footer>My Footer</footer>
+        <div className="px-[10%] py-16">{children}</div>
+        <footer className="flex h-[450px] justify-center items-center bg-black text-white text-3xl">My Footer</footer>
       </body>
     </html>
   );
