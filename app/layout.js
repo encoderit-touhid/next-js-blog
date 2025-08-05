@@ -24,13 +24,18 @@ const menus = [
     button:false
   },
   {
-    label: "Login",
-    route: "/login",
+    label: "Blog",
+    route: "/blog",
     button:false
   },
   {
     label: "Contact",
     route: "/contact-us",
+    button:false
+  },
+  {
+    label: "Login",
+    route: "/login",
     button:false
   },
   {
